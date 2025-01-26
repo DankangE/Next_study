@@ -2,7 +2,8 @@
 
 import { useTheme } from "./darkmode"; // ThemeContext에서 useTheme 임포트
 import Link from "next/link";
-import { Switch } from "antd";
+// import { Switch } from "antd";
+import ClientRootLayout from "./ClientDarkmode";
 
 export default function Navbar() {
   const { isDarkMode, toggleDarkMode } = useTheme(); // 다크 모드 상태와 토글 함수 가져오기
@@ -90,12 +91,13 @@ export default function Navbar() {
         >
           Login
         </button>
-        <Switch
+        <ClientRootLayout />
+        {/* <Switch
           checked={isDarkMode}
           onChange={toggleDarkMode}
           checkedChildren="Dark"
           unCheckedChildren="Light"
-        />
+        /> */}
       </div>
     </nav>
   );

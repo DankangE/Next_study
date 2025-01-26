@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.23.0",
     "@ant-design/dark-theme": "^2.0.2",
     "@ant-design/icons": "^5.5.2",
     "ant-design": "^1.0.0",
