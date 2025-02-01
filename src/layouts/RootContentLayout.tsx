@@ -51,7 +51,7 @@ export default function RootContentLayout({
             items={RootSiderMenuList}
           />
         </Layout.Sider>
-        <Layout style={{ padding: "0 24px 24px" }}>
+        <Layout style={{ padding: "0 24px 24px", overflow: "auto", height: "auto" }}>
           {children}
           <Layout.Footer
             style={{
