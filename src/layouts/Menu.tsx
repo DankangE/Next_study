@@ -1,13 +1,18 @@
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  AppstoreOutlined,
+  MailOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 import { MenuProps } from "antd";
 
-export const RootMenuList: MenuProps['items'] = [
-  { key: 'home', label: 'Home' },
-  { key: 'post_list', label: 'PostList'},
-  { key: 'post', label: 'Post' }
+export const RootMenuList: MenuProps["items"] = [
+  { key: "home", label: "Home" },
+  { key: "post_list", label: "PostList" },
+  { key: "post", label: "Post" },
+  { key: "form", label: "Form" },
 ];
 
-export const RootSiderMenuList: MenuProps['items'] = [
+export const RootSiderMenuList: MenuProps["items"] = [
   {
     key: "sub1",
     label: "Navigation One",
