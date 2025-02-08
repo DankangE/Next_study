@@ -5,7 +5,7 @@ import { LikeOutlined, MessageOutlined, StarOutlined } from "@ant-design/icons";
 import { Avatar, List, Space } from "antd";
 
 const data = Array.from({ length: 23 }).map((_, i) => ({
-  href: "https://ant.design",
+  href: "http://localhost:3000/",
   title: `게시글 ${i}`,
   avatar: `https://api.dicebear.com/7.x/miniavs/svg?seed=${i}`,
   description:
@@ -26,6 +26,7 @@ const ClientPostListBody: React.FC = () => (
     itemLayout="vertical"
     size="large"
     pagination={{
+      align: "center",
       onChange: (page) => {
         console.log(page);
       },
@@ -43,7 +44,7 @@ const ClientPostListBody: React.FC = () => (
         actions={[
           <IconText
             icon={StarOutlined}
-            text="156"
+            text="125"
             key="list-vertical-star-o"
           />,
           <IconText
