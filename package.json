@@ -14,7 +14,6 @@
     "@ant-design/dark-theme": "^2.0.2",
     "@ant-design/icons": "^5.5.2",
     "@ant-design/nextjs-registry": "^1.0.2",
-    "@ckeditor/ckeditor5-react": "^9.4.0",
     "ant-design": "^1.0.0",
     "antd": "^5.23.1",
     "express": "^4.21.2",
