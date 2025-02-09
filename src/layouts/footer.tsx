@@ -5,9 +5,9 @@ import Image from "next/image";
 import { FaFacebook, FaDiscord, FaYoutube } from "react-icons/fa";
 import profileImg from "../../public/images/단강프로필.png"; // 이미지 경로는 실제 위치에 맞게 조정해주세요
 
+// background-color: #2b2d36;
+// color: white;
 const FooterContainer = styled.footer`
-  background-color: #2b2d36;
-  color: white;
   padding: 2rem 1rem;
   width: 100%;
 `;
@@ -34,14 +34,12 @@ const LogoContainer = styled.div`
   }
 
   .logo-text {
-    color: white;
     font-size: 20px;
     font-family: Gungsuh, "궁서체", serif; // 궁서체 적용
   }
 `;
 
 const InfoText = styled.div`
-  color: #e0e0e0;
   font-size: 0.875rem;
   line-height: 1.6;
 `;
@@ -59,7 +57,6 @@ const ContactGrid = styled.div`
 
 const ContactItem = styled.p`
   font-size: 0.875rem;
-  color: #e0e0e0;
   margin: 0.5rem 0;
 
   span {

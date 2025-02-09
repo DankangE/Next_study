@@ -1,18 +1,18 @@
-"use client";
-
-import React from "react";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import type { MenuProps, MenuTheme } from "antd";
-import { Menu } from "antd";
-import { useTheme } from "./darkmode"; // ThemeContext에서 useTheme 임포트
+import { MenuProps } from "antd";
 
-type MenuItem = Required<MenuProps>["items"][number];
+export const RootMenuList: MenuProps["items"] = [
+  { key: "home", label: "Home" },
+  { key: "post_list", label: "PostList" },
+  { key: "post", label: "Post" },
+  { key: "form", label: "Form" },
+];
 
-const items: MenuItem[] = [
+export const RootSiderMenuList: MenuProps["items"] = [
   {
     key: "sub1",
     label: "Navigation One",
@@ -53,28 +53,3 @@ const items: MenuItem[] = [
     ],
   },
 ];
-
-const Sidebar: React.FC = () => {
-  const { isDarkMode } = useTheme(); // 다크 모드 상태 가져오기
-  const theme: MenuTheme = isDarkMode ? "dark" : "light"; // 테마 결정
-  const [current, setCurrent] = React.useState("1");
-
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-    setCurrent(e.key);
-  };
-
-  return (
-    <Menu
-      theme={theme}
-      onClick={onClick}
-      style={{ width: 256 }}
-      defaultOpenKeys={["sub1"]}
-      selectedKeys={[current]}
-      mode="inline"
-      items={items}
-    />
-  );
-};
-
-export default Sidebar;
