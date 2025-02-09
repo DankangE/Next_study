@@ -6,17 +6,17 @@ import { Editor } from "@toast-ui/react-editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import dynamic from "next/dynamic";
 
+const Editor = dynamic(
+  () => import("@toast-ui/react-editor").then((mod) => mod.Editor),
+  {
+    ssr: false,
+  }
+);
+
 const CustomEditor = () => {
   const [form] = Form.useForm();
 
   const editorRef = useRef<Editor>(null);
-
-  const Editor = dynamic(
-    () => import("@toast-ui/react-editor").then((mod) => mod.Editor),
-    {
-      ssr: false,
-    }
-  );
 
   return (
     <>
