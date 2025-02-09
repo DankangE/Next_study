@@ -1,28 +1,22 @@
 "use client";
 
-import React from "react";
-import { CKEditor, useCKEditorCloud } from "@ckeditor/ckeditor5-react";
+import React, { useRef } from "react";
 import { Form, Input, Select } from "antd";
+import { Editor } from "@toast-ui/react-editor";
+import "@toast-ui/editor/dist/toastui-editor.css";
+import dynamic from "next/dynamic";
 
 const CustomEditor = () => {
   const [form] = Form.useForm();
 
-  const cloud = useCKEditorCloud({
-    version: "44.1.0",
-    premium: true,
-  });
+  const editorRef = useRef<Editor>(null);
 
-  if (cloud.status === "error") {
-    return <div>Error!</div>;
-  }
-
-  if (cloud.status === "loading") {
-    return <div>Loading...</div>;
-  }
-
-  const { ClassicEditor, Essentials, Paragraph, Bold, Italic } = cloud.CKEditor;
-
-  const { FormatPainter } = cloud.CKEditorPremiumFeatures;
+  const Editor = dynamic(
+    () => import("@toast-ui/react-editor").then((mod) => mod.Editor),
+    {
+      ssr: false,
+    }
+  );
 
   return (
     <>
@@ -47,24 +41,16 @@ const CustomEditor = () => {
           />
         </Form.Item>
       </Form>
-      <style>{`.ck-editor__editable_inline { min-height: 400px; }`}</style>
-      <CKEditor
-        editor={ClassicEditor}
-        data={"<p>Hello world!</p>"}
-        config={{
-          licenseKey: "<YOUR_LICENSE_KEY>",
-          plugins: [Essentials, Paragraph, Bold, Italic, FormatPainter],
-          toolbar: [
-            "undo",
-            "redo",
-            "|",
-            "bold",
-            "italic",
-            "|",
-            "formatPainter",
-          ],
-        }}
-      />
+      <div>
+        <Editor
+          ref={editorRef}
+          initialValue="Hello, Toast UI Editor!"
+          previewStyle="vertical"
+          height="400px"
+          initialEditType="wysiwyg"
+          useCommandShortcut={true}
+        />
+      </div>
     </>
   );
 };

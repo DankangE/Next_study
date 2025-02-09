@@ -4,7 +4,6 @@ import CustomEditor from "./ClientFormEditor";
 import ClientFormHeader from "./ClientFormHeader";
 import BaseContainer from "../../layouts/BaseContainer";
 import ClientFormFooter from "./ClientFormFooter";
-// import TestFormPage from "./Test_ClientFormpage";
 
 interface FormPageProps {
   pathname?: string;
@@ -17,7 +16,6 @@ export default function FormContentPage(props: FormPageProps) {
         <ClientFormHeader />
         <CustomEditor />
         <ClientFormFooter />
-        {/* <TestFormPage /> */}
       </>
     </BaseContainer>
   );
