@@ -52,22 +52,6 @@ export default function RootContentLayout({
         />
       </Layout.Header>
       <Layout>
-        <Layout.Sider
-          width={200}
-          style={{
-            background: colorBgContainer,
-            height: "auto",
-            overflow: "auto",
-          }}
-        >
-          <Menu
-            mode="inline"
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1"]}
-            style={{ height: "100%", borderRight: 0 }}
-            items={RootSiderMenuList}
-          />
-        </Layout.Sider>
         <Layout
           style={{
             padding: "0 24px 24px",
